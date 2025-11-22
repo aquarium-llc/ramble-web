@@ -4,32 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>aquarium llc</title>
-    <meta name="description" content="apps and sundries" />
+    <title>ramble</title>
+    <meta name="description" content="ramble" />
     <!-- <meta
       property="og:image"
-      content="https://aquariumllc.com/images/vna-light.svg"
+      content="https://ramble.co/images/vna-light.svg"
     /> -->
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="1200" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="aquarium llc" />
-    <meta name="twitter:description" content="apps and sundries" />
+    <meta name="twitter:title" content="ramble" />
+    <meta name="twitter:description" content="shhhhhhh" />
     <!-- <meta
       name="twitter:image"
-      content="https://aquariumllc.com/images/vna-light.svg"
+      content="https://ramble.co/images/vna-light.svg"
     /> -->
 
         <!-- use icon slate to make your favicons -->
     <link rel="shortcut icon" href="/favicon.ico" /> 
-    <link rel="mask-icon" href="/favicon.svg" color="#ff0000">
+    <!-- <link rel="mask-icon" href="/favicon.svg" color="#ff0000"> -->
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
     <!-- safari uses these pngs for address bar icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"> -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"> -->
 
     <link rel="stylesheet" href="style/stylesheet.css" />
-    <link rel="canonical" href="https://aquariumllc.com/" />
+    <link rel="canonical" href="https://ramble.co/" />
 
     <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
 
@@ -43,72 +43,21 @@
   <body>
     <div class="main">
       <header>
-        <h1>aquarium llc</h1>
-        <h2>apps and sundries</h2>
+        <!-- <h1>ramble.co</h1> -->
+        <!-- <h2>apps and sundries</h2> -->
       </header>
 
       <div class="text-section">
-<div class="fish-row">
-<img
-  id="fish"
-  src=""
-  width="512"
-  height="512"
-  alt="Fish"
-  class="app-logo"
-/>
-</div>
 
-<p><strong>aquarium llc</strong><br />
-           apps and sundries</p>
+<!-- <p><strong>ramble</strong></p> -->
         <p>
-          More here soon. Possibly.
+          if you know, you know.
         </p>
-
         </div>
       </div>
 
-      <div class="below-text-actions">
-        <button id="refresh-fish" class="icon-button" aria-label="Randomize fish" title="Randomize">↻</button>
-      </div>
-
-
-      <div class="footer"><br />© 2025 aquarium llc<br /><br /></div>
+      <!-- <div class="footer"><br />© 2025 aquarium llc<br /><br /></div> -->
     </div>
-
-    <script>
-  const images = [
-    "images/fish/fish-annoyed.jpg",
-    "images/fish/fish-elated.jpg",
-    "images/fish/fish-happy.jpg",
-    "images/fish/fish-love.jpg",
-    "images/fish/fish-mad.jpg",
-    "images/fish/fish-surprised.jpg",
-    "images/fish/fish-worried.jpg"
-  ];
-
-  function randomizeFishImage() {
-    const img = document.getElementById("fish");
-    if (!img) return;
-    let next = images[Math.floor(Math.random() * images.length)];
-    if (images.length > 1) {
-      // avoid repeating the same image back-to-back when possible
-      while (next === img.getAttribute("src")) {
-        next = images[Math.floor(Math.random() * images.length)];
-      }
-    }
-    img.src = next;
-  }
-
-  // initial image
-  randomizeFishImage();
-
-  // button click handler
-  const refreshBtn = document.getElementById("refresh-fish");
-  if (refreshBtn) {
-    refreshBtn.addEventListener("click", randomizeFishImage);
-  }
-</script>
 
   </body>
 </html>
