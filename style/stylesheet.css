@@ -20,7 +20,7 @@ h6 {
 }
 
 body {
-  font-family: ui-monospace, "Inconsolata", "Menlo", "Source Sans Pro",
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", ui-monospace, "Inconsolata", "Menlo", "Source Sans Pro",
     "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-variant-numeric: tabular-nums;
   font-weight: 300;
@@ -47,38 +47,28 @@ a:hover {
 
 /* Layout */
 
-header h1,
-h2 {
-  color: transparent;
-  font-size: 0;
-  position: relative;
-  text-align: center;
-  padding: 40px 0 0 0;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 40px;
+  gap: 24px;
 }
 
-/* header h1 {
-  background-image: url(../images/vna-light.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+.header-logo {
+  width: 120px;
+  height: auto;
+}
 
-  -webkit-background-size: 128px 128px;
-  -moz-background-size: 128px 128px;
-  background-size: 128px 128px;
-  height: 128px;
-  padding-top: 60px;
-} */
+.header-wordmark {
+  width: 140px;
+  height: auto;
+}
 
-/* header h2 {
-  background-image: url(../images/tagline.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-
-  -webkit-background-size: 272px 24px;
-  -moz-background-size: 272px 24px;
-  background-size: 272px 24px;
-  height: 24px;
-  padding: 0 0 0 0;
-} */
+.header-tagline {
+  width: 120px;
+  height: auto;
+}
 
 .main {
   width: 960px;
@@ -277,19 +267,22 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
-  /* header h1 {
-        -webkit-background-size: 104px 94px;
-        -moz-background-size: 104px 94px;
-        background-size: 104px 94px;
-        height: 104px;
-    } */
+  header {
+    padding: 40px 20px 30px;
+    gap: 16px;
+  }
 
-  /* header h2 {
-    -webkit-background-size: 281px 22px;
-    -moz-background-size: 281px 22px;
-    background-size: 281px 22px;
-    height: 24px;
-  } */
+  .header-logo {
+    width: 80px;
+  }
+
+  .header-wordmark {
+    width: 100px;
+  }
+
+  .header-tagline {
+    width: 90px;
+  }
 
   .main {
     width: 100%;
@@ -303,5 +296,21 @@ h2 {
 
   .text-section {
     width: 90%;
+  }
+
+  .text-section ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: item;
+  }
+
+  .text-section ol li {
+    counter-increment: item;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+  }
+
+  .text-section ol li::before {
+    content: counter(item) ". ";
   }
 }

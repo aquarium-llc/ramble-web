@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - Classic Apple</title>
+    <style>
+      :root {
+        --steel: #c7c7cc;
+        --graphite: #4a4a4f;
+        --light: #f5f5f7;
+        --shadow: rgba(0, 0, 0, 0.2);
+        --aqua: #3aa9ff;
+        --aqua-dark: #1d7fd1;
+        --text: #111112;
+        --muted: #5e5e62;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue",
+          Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background:
+          repeating-linear-gradient(
+            90deg,
+            #f2f2f4 0px,
+            #f2f2f4 2px,
+            #e6e6ea 2px,
+            #e6e6ea 4px
+          ),
+          linear-gradient(180deg, #fafafb 0%, #e7e7eb 100%);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 12px;
+        color: var(--graphite);
+        font-weight: 600;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 18px;
+        border-radius: 14px 14px 6px 6px;
+        background: linear-gradient(180deg, #fdfdfd 0%, #d7d7dc 100%);
+        box-shadow: inset 0 1px 0 #ffffff, 0 10px 20px var(--shadow);
+        border: 1px solid #c9c9cf;
+      }
+
+      .topbar span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        margin-top: 18px;
+        background: linear-gradient(180deg, #ffffff 0%, #f0f0f3 100%);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+        border: 1px solid #d2d2d8;
+        display: grid;
+        grid-template-columns: minmax(200px, 280px) 1fr;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.25));
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        margin-top: 12px;
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 36ch;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .aqua-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #6cc5ff 0%, var(--aqua-dark) 100%);
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid #2e7fc8;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+          0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .ghost {
+        color: var(--aqua-dark);
+        font-weight: 600;
+      }
+
+      .details {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .panel {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 18px;
+        border: 1px solid #d4d4d9;
+        box-shadow: inset 0 1px 0 #ffffff, 0 8px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      .panel h2 {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .steps {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .steps li {
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #f6f6f9;
+        border: 1px solid #e0e0e6;
+      }
+
+      .foot {
+        margin-top: 22px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 780px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero img {
+          max-width: 220px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; Tryouts</a>
+      <div class="topbar">
+        <strong>Ramble</strong>
+        <span>Call like it's 1999</span>
+      </div>
+
+      <section class="hero">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <div>
+          <h1>Ramble</h1>
+          <p class="tagline">
+            A beautifully simple way to connect. Start a ramble, invite a friend,
+            and when they arrive we ring your phone.
+          </p>
+          <div class="cta-row">
+            <a class="aqua-button" href="https://testflight.com/ramble">
+              Get the TestFlight
+            </a>
+            <a class="ghost" href="#details">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="details" id="details">
+        <div class="panel">
+          <h2>Why Ramble</h2>
+          <p>
+            Light friction, real voice, and a delightfully nostalgic ring. It
+            feels like a classic phone call, without the hassle.
+          </p>
+        </div>
+        <div class="panel">
+          <h2>How it works</h2>
+          <ul class="steps">
+            <li>Start a ramble.</li>
+            <li>When a friend joins, we'll ring your phone.</li>
+            <li>Talk.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Made for sharing</h2>
+          <p>
+            One tap to begin, one link to invite, one ring to connect. Simple and
+            elegant.
+          </p>
+        </div>
+      </section>
+
+      <div class="foot">TestFlight link: https://testflight.com/ramble</div>
+    </div>
+  </body>
+</html>

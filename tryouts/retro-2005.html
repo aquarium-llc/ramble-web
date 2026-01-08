@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - 2005</title>
+    <style>
+      :root {
+        --sky: #e9f5ff;
+        --steel: #2d3a4b;
+        --blue: #3a7bd5;
+        --blue-dark: #234f8f;
+        --orange: #ff8a3d;
+        --panel: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Trebuchet MS", Tahoma, Verdana, sans-serif;
+        color: var(--steel);
+        background: radial-gradient(circle at top, #ffffff 0%, var(--sky) 55%);
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: var(--blue-dark);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .header {
+        background: linear-gradient(180deg, #fefefe 0%, #dbe9f9 100%);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 20px 40px rgba(35, 79, 143, 0.18);
+        display: grid;
+        grid-template-columns: minmax(120px, 160px) 1fr;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .header img {
+        width: 140px;
+        height: auto;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        color: var(--blue-dark);
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+        color: var(--blue);
+        margin-top: 8px;
+      }
+
+      .content {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--panel);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .card h2 {
+        margin-bottom: 12px;
+        color: var(--steel);
+      }
+
+      .steps {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+
+      .steps li {
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #ffffff 0%, #f2f5fb 100%);
+        border: 1px solid #d7e0ee;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, var(--orange) 0%, #ff6d1f 100%);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 10px 16px rgba(255, 109, 31, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 20px rgba(255, 109, 31, 0.4);
+      }
+
+      .side-note {
+        font-size: 0.95rem;
+        color: #4a5568;
+        margin-top: 16px;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: drop 0.6s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes drop {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 700px) {
+        .header {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .header img {
+          margin: 0 auto;
+        }
+
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; Tryouts</a>
+      <header class="header fade-in">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <div>
+          <h1>Ramble</h1>
+          <div class="tagline">Call like it's 1999</div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="card fade-in delay-1">
+          <h2>We made it really easy.</h2>
+          <p>
+            Start a ramble, invite someone, and the moment they join you get a
+            real ring. No busywork, just talking.
+          </p>
+          <a class="cta" href="https://testflight.com/ramble">Join the TestFlight</a>
+        </div>
+
+        <div class="card fade-in delay-2">
+          <h2>How it works</h2>
+          <ul class="steps">
+            <li>Start a ramble.</li>
+            <li>When a friend joins, we'll ring your phone.</li>
+            <li>Talk.</li>
+          </ul>
+          <p class="side-note">
+            Perfect for quick check-ins, late-night catchups, and everything in
+            between.
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

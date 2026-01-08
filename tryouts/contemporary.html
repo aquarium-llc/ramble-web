@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - Contemporary</title>
+    <style>
+      :root {
+        --black: #0f1115;
+        --stone: #f5f3ef;
+        --sand: #e8e2d9;
+        --teal: #0f7a6c;
+        --coral: #ff7a59;
+        --glass: rgba(255, 255, 255, 0.7);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Optima", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        color: var(--black);
+        background:
+          radial-gradient(circle at 15% 20%, #fff8f2 0%, transparent 45%),
+          radial-gradient(circle at 85% 10%, #f1fbf8 0%, transparent 50%),
+          linear-gradient(135deg, var(--stone), var(--sand));
+        min-height: 100vh;
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 36px 20px 72px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--teal);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(200px, 260px) 1fr;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--glass);
+        border: 1px solid rgba(15, 17, 21, 0.1);
+        font-size: 0.9rem;
+      }
+
+      .hero img {
+        width: 220px;
+        height: auto;
+        filter: drop-shadow(0 18px 32px rgba(15, 17, 21, 0.18));
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 6vw, 4rem);
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        color: #3c3f44;
+        margin-top: 8px;
+        max-width: 36ch;
+      }
+
+      .grid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .panel {
+        background: var(--glass);
+        border: 1px solid rgba(15, 17, 21, 0.1);
+        border-radius: 18px;
+        padding: 18px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 12px 30px rgba(15, 17, 21, 0.08);
+      }
+
+      .panel h2 {
+        margin-bottom: 10px;
+      }
+
+      .steps {
+        padding-left: 18px;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 12px;
+        background: var(--black);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .cta span {
+        display: inline-block;
+        background: var(--coral);
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        animation: lift 0.7s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes lift {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+
+        .hero img {
+          width: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; Tryouts</a>
+
+      <section class="hero">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <div>
+          <div class="badge reveal">Built for real conversation</div>
+          <h1 class="reveal delay-1">Ramble</h1>
+          <p class="tagline reveal delay-2">Call like it's 1999. Make it feel effortless today.</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel reveal delay-1">
+          <h2>We made it really easy.</h2>
+          <p>
+            Start a ramble, invite a friend, and when they drop in you get a ring.
+            It's a softer way to start real talk.
+          </p>
+        </div>
+        <div class="panel reveal delay-2">
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li>Start a ramble.</li>
+            <li>When a friend joins, we'll ring your phone.</li>
+            <li>Talk.</li>
+          </ol>
+        </div>
+        <div class="panel reveal delay-3">
+          <h2>Try it now</h2>
+          <p>Jump into the TestFlight and invite a friend.</p>
+          <a class="cta" href="https://testflight.com/ramble">
+            Get the TestFlight <span>Beta</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

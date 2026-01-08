@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - 1970s</title>
+    <style>
+      :root {
+        --mustard: #d6a82a;
+        --orange: #dd6b20;
+        --rust: #b45309;
+        --avocado: #4b6b3c;
+        --cream: #f5efe2;
+        --ink: #2a1f17;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Cooper Black", "Bookman Old Style", "Georgia", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 20% 20%, rgba(214, 168, 42, 0.5), transparent 55%),
+          radial-gradient(circle at 80% 0%, rgba(75, 107, 60, 0.35), transparent 50%),
+          linear-gradient(135deg, var(--cream), #f8e7cd);
+        min-height: 100vh;
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 20px 72px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--rust);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .hero {
+        border-radius: 24px;
+        background: var(--cream);
+        padding: 26px;
+        display: grid;
+        grid-template-columns: minmax(140px, 200px) 1fr;
+        gap: 18px;
+        align-items: center;
+        box-shadow: 0 16px 32px rgba(42, 31, 23, 0.15);
+        border: 4px solid var(--rust);
+      }
+
+      .hero img {
+        width: 150px;
+        height: auto;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 5vw, 3.4rem);
+        color: var(--rust);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        color: var(--avocado);
+        margin-top: 8px;
+      }
+
+      .groove {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .panel {
+        background: #fff4d7;
+        border-radius: 18px;
+        padding: 18px;
+        border: 3px solid var(--mustard);
+        box-shadow: inset 0 0 0 3px var(--orange);
+      }
+
+      .panel h2 {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 1.1rem;
+      }
+
+      .steps {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .steps li {
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: #fff9ea;
+        border: 2px dashed var(--orange);
+      }
+
+      .cta {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 12px 20px;
+        background: var(--orange);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        border: 3px solid var(--rust);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .stripe {
+        margin-top: 24px;
+        height: 18px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--mustard) 0 20px,
+          var(--orange) 20px 40px,
+          var(--avocado) 40px 60px
+        );
+        border-radius: 999px;
+      }
+
+      @media (max-width: 720px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero img {
+          margin: 0 auto;
+        }
+
+        .groove {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; Tryouts</a>
+      <section class="hero">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <div>
+          <h1>Ramble</h1>
+          <div class="tagline">Call like it's 1999. Groove like it's 1979.</div>
+        </div>
+      </section>
+
+      <section class="groove">
+        <div class="panel">
+          <h2>We made it really easy.</h2>
+          <p>
+            Start a ramble, share the invite, and when someone joins you get a
+            ring. It's all about easy conversation.
+          </p>
+          <a class="cta" href="https://testflight.com/ramble">Get the TestFlight</a>
+        </div>
+        <div class="panel">
+          <h2>How it works</h2>
+          <ul class="steps">
+            <li>Start a ramble.</li>
+            <li>When a friend joins, we'll ring your phone.</li>
+            <li>Talk.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="stripe"></div>
+    </div>
+  </body>
+</html>

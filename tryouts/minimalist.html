@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - Minimalist</title>
+    <style>
+      :root {
+        --bg: #fdfbf7;
+        --ink: #1b1a17;
+        --muted: #6f6760;
+        --accent: #0f7a6c;
+        --accent-soft: #e6f3f1;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+          "Book Antiqua", Georgia, serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+      }
+
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 24px;
+        font-size: 0.95rem;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .brand img {
+        width: 96px;
+        height: auto;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 6vw, 3.2rem);
+        font-weight: 600;
+      }
+
+      h2 {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        font-weight: 500;
+        margin: 18px 0 12px;
+      }
+
+      p {
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .steps {
+        margin: 24px 0 32px;
+        padding-left: 20px;
+      }
+
+      .steps li {
+        margin-bottom: 12px;
+        color: var(--ink);
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 10px 20px rgba(15, 122, 108, 0.2);
+      }
+
+      .cta span {
+        font-size: 0.95rem;
+      }
+
+      .tagline {
+        font-style: italic;
+        color: var(--ink);
+      }
+
+      .accent-panel {
+        background: var(--accent-soft);
+        padding: 18px 20px;
+        border-radius: 16px;
+        margin-top: 28px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: fadeUp 0.6s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      .delay-4 {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .brand {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="index.html">&larr; Tryouts</a>
+      <div class="brand reveal">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <h1>Ramble</h1>
+      </div>
+
+      <p class="tagline reveal delay-1">Call like it's 1999.</p>
+
+      <h2 class="reveal delay-2">We made it really easy.</h2>
+      <p class="reveal delay-2">
+        Ramble is the simplest way to jump into a real conversation. No friction,
+        just a gentle nudge when someone shows up.
+      </p>
+
+      <ol class="steps reveal delay-3">
+        <li>Start a ramble.</li>
+        <li>When a friend joins, we'll ring your phone.</li>
+        <li>Talk.</li>
+      </ol>
+
+      <a class="cta reveal delay-4" href="https://testflight.com/ramble">
+        <span>Get the TestFlight</span>
+      </a>
+
+      <div class="accent-panel reveal delay-4">
+        <p>
+          Built for the moments when you want a call to feel easy, spontaneous,
+          and just a little nostalgic.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

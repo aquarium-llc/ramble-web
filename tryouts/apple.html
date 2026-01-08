@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - Apple Style</title>
+    <style>
+      :root {
+        --bg: #f5f5f7;
+        --ink: #1d1d1f;
+        --muted: #6e6e73;
+        --line: #e3e3e6;
+        --blue: #0071e3;
+        --panel: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 0 24px;
+        font-size: 0.95rem;
+      }
+
+      .nav span {
+        color: var(--muted);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(240px, 360px) 1fr;
+        gap: 28px;
+        align-items: center;
+        background: linear-gradient(180deg, #ffffff 0%, #f6f6f8 100%);
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 24px 60px rgba(29, 29, 31, 0.1);
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 20px 35px rgba(29, 29, 31, 0.2));
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 6vw, 4rem);
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        margin-top: 12px;
+        font-size: 1.2rem;
+        color: var(--muted);
+        max-width: 34ch;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        margin-top: 22px;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 999px;
+        background: var(--blue);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .cta span {
+        font-size: 0.9rem;
+      }
+
+      .ghost {
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      .grid {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .card h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .steps {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        color: var(--ink);
+      }
+
+      .steps li {
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: #f7f7f9;
+      }
+
+      .foot {
+        margin-top: 22px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 800px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+
+        .hero img {
+          max-width: 240px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; Tryouts</a>
+      <div class="nav">
+        <strong>Ramble</strong>
+        <span>Call like it's 1999</span>
+      </div>
+
+      <section class="hero">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <div>
+          <h1>Ramble</h1>
+          <p class="tagline">
+            A delightfully simple way to get to a real conversation. Start a
+            ramble, invite a friend, and when they join we ring your phone.
+          </p>
+          <div class="cta-row">
+            <a class="cta" href="https://testflight.com/ramble">
+              <span>Get the TestFlight</span>
+            </a>
+            <a class="ghost" href="#details">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid" id="details">
+        <div class="card">
+          <h2>Why Ramble</h2>
+          <p>
+            Designed to feel effortless. Light friction, real voice, and a
+            delightful ring when someone shows up.
+          </p>
+        </div>
+        <div class="card">
+          <h2>How it works</h2>
+          <ul class="steps">
+            <li>Start a ramble.</li>
+            <li>When a friend joins, we'll ring your phone.</li>
+            <li>Talk.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Built for now</h2>
+          <p>
+            One tap to start. A gentle nudge to connect. All the charm of a 1999
+            phone call, without the hassle.
+          </p>
+        </div>
+      </section>
+
+      <div class="foot">TestFlight link: https://testflight.com/ramble</div>
+    </div>
+  </body>
+</html>

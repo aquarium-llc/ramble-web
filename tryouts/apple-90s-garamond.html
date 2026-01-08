@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble - 90s Apple Garamond</title>
+    <style>
+      :root {
+        --ink: #111111;
+        --paper: #ffffff;
+        --gray: #8b8b8b;
+        --rule: #e2e2e2;
+        --accent: #0f7a6c;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Apple Garamond", "Garamond", "Times New Roman", serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 36px 20px 80px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: var(--gray);
+        font-size: 0.95rem;
+      }
+
+      .masthead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--rule);
+        padding-bottom: 10px;
+        margin-bottom: 32px;
+      }
+
+      .masthead span {
+        font-size: 0.95rem;
+        color: var(--gray);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(200px, 280px) 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: clamp(5.1rem, 10.5vw, 7.5rem);
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+
+      .tagline {
+        margin-top: 10px;
+        font-size: clamp(2.4rem, 5vw, 3.4rem);
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      .lede {
+        margin-top: 18px;
+        font-size: 1.05rem;
+        max-width: 48ch;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 18px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        font-size: 1rem;
+      }
+
+      .cta span {
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      @media (max-width: 740px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero img {
+          max-width: 220px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; Tryouts</a>
+      <div class="masthead">
+        <strong>Ramble</strong>
+        <span>Designed in California</span>
+      </div>
+
+      <section class="hero">
+        <img src="../images/ramblephant-smooth@3x.png" alt="Ramble elephant" />
+        <div>
+          <h1>Ramble</h1>
+          <div class="tagline">Call like it's 1999.</div>
+          <p class="lede">
+            A simple way to reach someone when you want a real conversation. One
+            tap to start, one ring to connect.
+          </p>
+          <div class="cta-row">
+            <a class="cta" href="https://testflight.com/ramble">
+              Get the TestFlight <span>Beta</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

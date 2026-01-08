@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ramble Tryouts</title>
+    <style>
+      :root {
+        --cream: #fbf7f0;
+        --ink: #1d1b16;
+        --accent: #0f7a6c;
+        --accent-2: #e06d2c;
+        --card: #ffffff;
+        --border: #e6dfd4;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+          Georgia, serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top, #fff9ef 0%, var(--cream) 60%);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+
+      .logo {
+        width: min(220px, 60vw);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        letter-spacing: -0.02em;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        max-width: 40ch;
+        margin-top: 12px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .pill {
+        display: inline-block;
+        font-size: 0.85rem;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        margin-bottom: 12px;
+        color: var(--accent);
+        background: #f0f8f6;
+      }
+
+      .note {
+        margin-top: 28px;
+        padding: 16px 18px;
+        background: #fff2e2;
+        border-radius: 16px;
+        border: 1px dashed #f0c6a0;
+      }
+
+      .note a {
+        color: var(--accent-2);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 24px 16px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <img
+          src="../images/ramblephant-smooth@3x.png"
+          alt="Ramble elephant"
+          class="logo"
+        />
+        <div>
+          <h1>Ramble Tryouts</h1>
+          <p>
+            Three landing-page experiments for Ramble. Each option keeps the
+            ramblephant front-and-center, but plays with a different era.
+          </p>
+        </div>
+      </section>
+
+      <section class="cards">
+        <a class="card" href="minimalist.html">
+          <span class="pill">Minimalist</span>
+          <h2>Quiet, clean, modern</h2>
+          <p>
+            Spacious, editorial, and stripped down to the essentials. Calm and
+            minimal.
+          </p>
+        </a>
+        <a class="card" href="geocities-1999.html">
+          <span class="pill">1999</span>
+          <h2>Geocities nostalgia</h2>
+          <p>
+            Tables, tiled backgrounds, and a bit of glitter. Feels like a dial-up
+            time capsule.
+          </p>
+        </a>
+        <a class="card" href="retro-2005.html">
+          <span class="pill">2005</span>
+          <h2>Glossy era</h2>
+          <p>
+            A glossy 2005 style with gradients, soft shadows, and chunky buttons.
+          </p>
+        </a>
+        <a class="card" href="retro-2015.html">
+          <span class="pill">2015</span>
+          <h2>Flat and friendly</h2>
+          <p>
+            Bold blues, flat cards, and clean UI blocks. Feels like a 2015 app
+            splash page.
+          </p>
+        </a>
+        <a class="card" href="contemporary.html">
+          <span class="pill">Contemporary</span>
+          <h2>Soft glass, big type</h2>
+          <p>
+            Airy gradients, glassy panels, and modern typography with a calm
+            palette.
+          </p>
+        </a>
+        <a class="card" href="retro-1970s.html">
+          <span class="pill">1970s</span>
+          <h2>Groovy analog web</h2>
+          <p>
+            Warm tones, chunky borders, and retro curves. A 70s alternate-universe
+            website.
+          </p>
+        </a>
+        <a class="card" href="apple.html">
+          <span class="pill">Apple</span>
+          <h2>Apple product vibe</h2>
+          <p>
+            Clean, glossy, and minimal with generous spacing and subtle shadows.
+          </p>
+        </a>
+        <a class="card" href="apple-classic.html">
+          <span class="pill">Classic Apple</span>
+          <h2>Skeuomorphic era</h2>
+          <p>
+            Brushed metal, aqua buttons, and early 2000s Apple polish.
+          </p>
+        </a>
+        <a class="card" href="apple-90s-garamond.html">
+          <span class="pill">90s Apple</span>
+          <h2>Apple Garamond era</h2>
+          <p>
+            Clean white layout, quiet rules, and serif typography inspired by
+            90s Apple branding.
+          </p>
+        </a>
+        <a class="card" href="time-machine.html">
+          <span class="pill">Time Machine</span>
+          <h2>UI chooser concepts</h2>
+          <p>
+            Four different UI controls for letting people pick a time travel
+            era.
+          </p>
+        </a>
+      </section>
+
+      <section class="note">
+        <strong>TestFlight:</strong>
+        <a href="https://testflight.com/ramble">https://testflight.com/ramble</a>
+      </section>
+    </main>
+  </body>
+</html>
