@@ -43,9 +43,18 @@
   <body>
     <div class="main">
       <header>
-        <img src="images/smooth-elephant.png" alt="Ramble elephant logo" class="header-logo" />
-        <img src="images/ramble.png" alt="ramble" class="header-wordmark" />
-        <img src="images/tagline.png" alt="Call like it's 1999" class="header-tagline" />
+        <picture>
+          <source srcset="images/smooth-elephant-dark.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/smooth-elephant.png" alt="Ramble elephant logo" class="header-logo" />
+        </picture>
+        <picture>
+          <source srcset="images/ramble-dark.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/ramble.png" alt="ramble" class="header-wordmark" />
+        </picture>
+        <picture>
+          <source srcset="images/tagline-dark.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/tagline.png" alt="Call like it's 1999" class="header-tagline" />
+        </picture>
       </header>
 
       <div class="text-section">
