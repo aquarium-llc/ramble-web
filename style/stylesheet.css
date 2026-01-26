@@ -70,7 +70,7 @@ header {
 }
 
 .header-tagline {
-  width: 200px;
+  width: 300px;
   height: auto;
 }
 
@@ -295,7 +295,7 @@ header {
   }
 
   .header-tagline {
-    width: 150px;
+    width: 250px;
   }
 
   .main {
