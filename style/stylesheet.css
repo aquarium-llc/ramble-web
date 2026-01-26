@@ -232,7 +232,12 @@ header {
 
   body {
     color: #000;
-    background-color: #fcfcf9;
+    background:
+      radial-gradient(circle 400px at 0% 100%, #CCE6D3, transparent),
+      radial-gradient(circle 400px at 100% 100%, #C7D6AE, transparent),
+      linear-gradient(to bottom, #80BCED, #F2C88B);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }
 
@@ -241,7 +246,12 @@ header {
 
   body {
     color: #fff;
-    background-color: #343432;
+    background:
+      radial-gradient(circle 400px at 0% 100%, #7E9E8A, transparent),
+      radial-gradient(circle 400px at 100% 100%, #77866A, transparent),
+      linear-gradient(to bottom, #356FB6, #986E40);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   /* header h1 {
