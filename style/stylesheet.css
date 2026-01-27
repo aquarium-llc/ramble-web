@@ -55,7 +55,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px 40px;
+  padding: 60px 20px 20px;
   gap: 24px;
 }
 
@@ -82,8 +82,8 @@ header {
 
 .text-section {
   width: 540px;
-  margin: 40px auto 0 auto;
-  margin-top: 40px;
+  margin: 20px auto 0 auto;
+  margin-top: 20px;
   margin-bottom: 60px;
   /* outline: 1px solid orange; */
 }
@@ -94,6 +94,11 @@ header {
 
 .text-section h3 {
   font-size: 16px;
+}
+
+.text-section a img {
+  display: block;
+  margin: 0 auto;
 }
 
 .video-container {
@@ -282,7 +287,7 @@ header {
 
 @media only screen and (max-width: 600px) {
   header {
-    padding: 40px 20px 30px;
+    padding: 30px 20px 10px;
     gap: 16px;
   }
 
