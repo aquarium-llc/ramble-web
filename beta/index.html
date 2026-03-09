@@ -300,7 +300,7 @@
             storeLink.style.display = "block";
           } else {
             const approvalMessage = payload.message
-              ? `${payload.message} We'll email you when you're approved.`
+              ? `${payload.message}`
               : "Thanks for signing up. We'll email you when you're approved.";
 
             setStatus("success", approvalMessage);
