@@ -295,9 +295,17 @@
             throw new Error(payload.message || "Signup failed.");
           }
 
-          setStatus("success", payload.message || "Success!");
-          storeLink.href = payload.appLink;
-          storeLink.style.display = "block";
+          if (payload.appLink) {
+            setStatus("success", payload.message || "Success!");
+            storeLink.href = payload.appLink;
+            storeLink.style.display = "block";
+          } else {
+            const approvalMessage = payload.message
+              ? `${payload.message} We'll email you when you're approved.`
+              : "Thanks for signing up. We'll email you when you're approved.";
+
+            setStatus("success", approvalMessage);
+          }
         } catch (error) {
           setStatus("error", error.message || "Something went wrong.");
         } finally {
