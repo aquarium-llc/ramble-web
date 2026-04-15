@@ -21,12 +21,25 @@ h6 {
   font-weight: bold;
 }
 
+:root {
+  color-scheme: light dark;
+  --page-text: #000;
+  --page-background: #faf0ca;
+  --link-color: #0098ff;
+  --link-visited-color: #005b99;
+  --icon-button-hover: rgba(0, 0, 0, 0.05);
+}
+
 body {
   font-family: "Space Mono", "SF Mono", "Roboto Mono", "Inconsolata", "Menlo", monospace;
   font-variant-numeric: tabular-nums;
   font-weight: 400;
   font-size: 22px;
   line-height: 1.5em;
+  color: var(--page-text);
+  background: var(--page-background);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 p {
@@ -46,12 +59,12 @@ sup {
 }
 
 a {
-  color: #0098ff;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 a:visited {
-  color: #005b99;
+  color: var(--link-visited-color);
 }
 
 a:hover {
@@ -114,8 +127,8 @@ header {
 .header-carousel {
   display: flex;
   justify-content: center;
-  margin: 0 auto 28px;
-  padding: 0 20px;
+  /* margin: 0 auto 12px; */
+  /* padding: 0 20px; */
 }
 
 .header-carousel-text {
@@ -158,7 +171,8 @@ header {
 }
 
 .support-line {
-  font-size: 0.7em;
+  font-size: 15px;
+  line-height: 22px;
   font-weight: 400;
 }
 
@@ -248,7 +262,7 @@ header {
 }
 
 .icon-button:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--icon-button-hover);
 }
 
 .below-text-actions {
@@ -279,11 +293,11 @@ header {
 }
 
 .app-store-link svg path {
-  fill: #0098ff;
+  fill: var(--link-color);
 }
 
 .app-store-link:visited svg path {
-  fill: #005b99;
+  fill: var(--link-visited-color);
 }
 
 .download-icon {
@@ -304,50 +318,13 @@ header {
   font-size: 12px;
 }
 
-@media (prefers-color-scheme: light) {
-  /* Light theme styles go here */
-
-  body {
-    color: #000;
-    background: #FAF0CA;
-    background-attachment: fixed;
-    min-height: 100vh;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
-  /* Dark theme styles go here */
-
-  body {
-    color: #000;
-    background: #CCE6D3;
-    background-attachment: fixed;
-    min-height: 100vh;
-  }
-
-  /* header h1 {
-    background-image: url(../images/vna-dark.svg);
-  }
-
-  header h2 {
-    background-image: url(../images/tagline-dark.svg);
-  } */
-
-  a {
-    color: #0098ff;
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: #005b99;
-  }
-
-  .app-store-link svg path {
-    fill: #0098ff;
-  }
-
-  .app-store-link:visited svg path {
-    fill: #005b99;
+  :root {
+    --page-text: #f7f1ff;
+    --page-background: #2b1744;
+    --link-color: #a4d6f7;
+    --link-visited-color: #81afcd;
+    --icon-button-hover: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -387,7 +364,7 @@ header {
   }
 
   .header-carousel {
-    margin-bottom: 24px;
+    margin-bottom: 0px;
     padding: 0 16px;
   }
 
