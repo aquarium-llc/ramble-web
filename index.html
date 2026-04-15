@@ -45,17 +45,22 @@
       <header class="home-header">
         <picture>
           <source srcset="images/smooth-elephant-dark.png" media="(prefers-color-scheme: dark)" />
-          <img src="images/kare-doghead.png" alt="Ramble elephant logo" class="header-logo" />
+          <img src="images/smooth-elephant.png" alt="Ramble elephant logo" class="header-logo" />
         </picture>
         <div class="header-copy">
           <h1 class="header-title">Ramble</h1>
-          <p class="header-subhead">Walk and talk with your friends</p>
+          <!-- <p class="header-subhead">Talk with your friends</p> -->
         </div>
       </header>
 
-      <div class="text-section">
+      <div class="header-carousel" aria-label="Common times to start a Ramble">
+        <p class="header-carousel-text" data-carousel-text>Getting your steps in?</p>
+      </div>
 
-<p>Ramble is the easiest way to have spontaneous phone calls with your friends. Add friends, then start a Ramble to ping them. Whoever’s free joins for a call.</p>
+  
+      <div class="text-section">
+<p class="hero-intro">Time to talk to your friends... again.</p>
+<p>Ramble is the easiest way to have spontaneous phone calls with your friends.</p><p>Add friends, then start a Ramble to ping them. Whoever’s free joins for a call.</p>
 
 <!-- <p>
   <ol>
@@ -74,9 +79,6 @@
 <a href="https://play.google.com/store/apps/details?id=com.aquariumllc.ramble"><img src="images/play-store-download.svg" alt="Download on the Play Store" /></a>
 </p>
 
-<p>
-<sup>*</sup>Sneakers optional, but it’s fun to walk and talk.
-</p>
 <p>For support, please email <a href="mailto:support@ramble.co">support@ramble.co</a></p>
 
 </div>
@@ -85,5 +87,33 @@
       <!-- <div class="footer"><br />© 2025 aquarium llc<br /><br /></div> -->
     </div>
 
+    <script>
+      (() => {
+        const prompts = [
+          "Getting your steps in?",
+          "Walking the dog?",
+          "Commuting to work?",
+          "Doing chores?"
+        ];
+
+        const promptEl = document.querySelector("[data-carousel-text]");
+
+        if (!promptEl) {
+          return;
+        }
+
+        let currentIndex = 0;
+
+        window.setInterval(() => {
+          promptEl.classList.add("is-transitioning");
+
+          window.setTimeout(() => {
+            currentIndex = (currentIndex + 1) % prompts.length;
+            promptEl.textContent = prompts[currentIndex];
+            promptEl.classList.remove("is-transitioning");
+          }, 180);
+        }, 2600);
+      })();
+    </script>
   </body>
 </html>
