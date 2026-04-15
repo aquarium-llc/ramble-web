@@ -6,19 +6,19 @@
 
     <title>ramble</title>
     <meta name="description" content="ramble" />
-    <!-- <meta
+    <meta
       property="og:image"
-      content="https://ramble.co/images/vna-light.svg"
-    /> -->
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
+      content="https://ramble.co/images/pixel.png"
+    />
+    <meta property="og:image:width" content="1350" />
+    <meta property="og:image:height" content="1092" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="ramble" />
     <meta name="twitter:description" content="shhhhhhh" />
-    <!-- <meta
+    <meta
       name="twitter:image"
-      content="https://ramble.co/images/vna-light.svg"
-    /> -->
+      content="https://ramble.co/images/pixel.png"
+    />
 
         <!-- use icon slate to make your favicons -->
     <link rel="shortcut icon" href="/favicon.ico" /> 
@@ -42,50 +42,91 @@
   </head>
   <body>
     <div class="main">
-      <header>
+      <header class="home-header">
         <picture>
-          <source srcset="images/smooth-elephant-dark.png" media="(prefers-color-scheme: dark)" />
-          <img src="images/smooth-elephant.png" alt="Ramble elephant logo" class="header-logo" />
+          <source srcset="images/doghead-256.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/doghead-256.png" alt="Dog logo" class="header-logo" />
         </picture>
-        <picture>
-          <source srcset="images/ramble-dark.png" media="(prefers-color-scheme: dark)" />
-          <img src="images/ramble.png" alt="ramble" class="header-wordmark" />
-        </picture>
-        <picture>
-          <source srcset="images/walk-tagline-dark.png" media="(prefers-color-scheme: dark)" />
-          <img src="images/walk-tagline.png" alt="Walk and talk with your friends" class="header-tagline" />
-        </picture>
+        <div class="header-copy">
+          <h1 class="header-title">Ramble</h1>
+          <!-- <p class="header-subhead">Talk with your friends</p> -->
+        </div>
       </header>
 
+      <div class="header-carousel" aria-label="Common times to start a Ramble">
+        <p class="header-carousel-text" data-carousel-text>Getting your steps in?</p>
+      </div>
       <div class="text-section">
-<p>
-<a href="https://apps.apple.com/app/id6752878870"><img src="images/apple-app-store-download.svg" alt="Download on the App Store" /></a>
-</p>
-<p>
-<a href="https://play.google.com/store/apps/details?id=com.aquariumllc.ramble"><img src="images/play-store-download.svg" alt="Download on the Play Store" /></a>
-</p>
-<p>Ramble is the easiest way to have spontaneous phone calls with your friends.</p>
+<p class="hero-intro">Time to talk to your friends... again.</p>
+<p>Ramble is the easiest way to have spontaneous phone calls with your friends.</p><p>Add friends, then start a Ramble to ping them. Whoever’s free joins for a call.</p>
 
-<p>
+<!-- <p>
   <ol>
     <li>Download the app and invite some friends.</li>
     <li>When you’re ready to chat, put on your sneakers<sup>*</sup> and start a Ramble.</li>
     <li>Whoever’s free joins for a chat.</li>
   </ol>
+</p> -->
+
+<!-- <p>Using your phone to make actual phone calls in 2026? Crazy!</p> -->
+
+<p data-store-row="ios">
+  <a href="https://apps.apple.com/app/id6752878870"><img src="images/apple-app-store-download.svg" alt="Download on the App Store" /></a>
 </p>
-
-<p>Using your phone to make actual phone calls? Crazy!</p>
-
-<p>
-<sup>*</sup>Sneakers optional, but it’s fun to walk and talk.
+<p data-store-row="android">
+  <a href="https://play.google.com/store/apps/details?id=com.aquariumllc.ramble"><img src="images/play-store-download.svg" alt="Download on the Play Store" /></a>
 </p>
-<p>For support, please email <a href="mailto:support@ramble.co">support@ramble.co</a></p>
-
+<p class="support-line">
+  For support, please email <a href="mailto:support@ramble.co">support@ramble.co</a>
+</p>
 </div>
       </div>
-
-      <!-- <div class="footer"><br />© 2025 aquarium llc<br /><br /></div> -->
+      <div class="footer"><br />© 2025 Aquarium LLC<br /><br /></div>
     </div>
 
+    <script>
+      (() => {
+        const isAndroid = (() => {
+          const uaDataPlatform =
+            navigator.userAgentData && typeof navigator.userAgentData.platform === "string"
+              ? navigator.userAgentData.platform
+              : "";
+
+          return /android/i.test(uaDataPlatform) || /android/i.test(navigator.userAgent || "");
+        })();
+
+        const iosStoreRow = document.querySelector('[data-store-row="ios"]');
+        const androidStoreRow = document.querySelector('[data-store-row="android"]');
+
+        if (isAndroid && iosStoreRow && androidStoreRow) {
+          iosStoreRow.before(androidStoreRow);
+        }
+
+        const prompts = [
+          "Getting your steps in?",
+          "Walking the dog?",
+          "Commuting to work?",
+          "Doing chores?"
+        ];
+
+        const promptEl = document.querySelector("[data-carousel-text]");
+
+        if (!promptEl) {
+          return;
+        }
+
+        let currentIndex = 0;
+
+        window.setInterval(() => {
+          promptEl.classList.add("is-transitioning");
+
+          window.setTimeout(() => {
+            currentIndex = (currentIndex + 1) % prompts.length;
+            promptEl.textContent = prompts[currentIndex];
+            promptEl.classList.remove("is-transitioning");
+          }, 180);
+        }, 2600);
+      })();
+    </script>
   </body>
 </html>
