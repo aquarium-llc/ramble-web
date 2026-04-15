@@ -157,6 +157,11 @@ header {
   font-weight: 700;
 }
 
+.support-line {
+  font-size: 0.7em;
+  font-weight: 400;
+}
+
 .text-section h3 {
   font-size: 16px;
 }
