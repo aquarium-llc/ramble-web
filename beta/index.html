@@ -23,24 +23,25 @@
 
     <style>
       :root {
-        color-scheme: light;
-        --background-top: #f8f1dc;
-        --background-bottom: #dff3e9;
-        --panel: rgba(255, 255, 255, 0.82);
-        --panel-border: rgba(21, 48, 43, 0.12);
-        --text: #16302b;
-        --muted: rgba(22, 48, 43, 0.78);
-        --input-bg: rgba(255, 255, 255, 0.88);
-        --input-border: rgba(22, 48, 43, 0.18);
-        --button-bg: #16302b;
-        --button-text: #f5f0de;
-        --button-disabled: rgba(22, 48, 43, 0.42);
+        color-scheme: light dark;
+        --background: #faf0ca;
+        --background-glow: rgba(255, 255, 255, 0.55);
+        --background-accent: rgba(0, 152, 255, 0.14);
+        --panel: rgba(255, 252, 243, 0.84);
+        --panel-border: rgba(0, 0, 0, 0.12);
+        --text: #000000;
+        --muted: rgba(0, 0, 0, 0.72);
+        --input-bg: rgba(255, 255, 255, 0.9);
+        --input-border: rgba(0, 0, 0, 0.14);
+        --button-bg: #000000;
+        --button-text: #faf0ca;
+        --button-disabled: rgba(0, 0, 0, 0.38);
         --success-bg: #daf4e2;
         --success-text: #174832;
         --error-bg: #ffe4dc;
         --error-text: #7c2f1f;
-        --link-bg: #b1eed0;
-        --link-text: #103d29;
+        --link-bg: #bfe5ff;
+        --link-text: #003b66;
       }
 
       * {
@@ -56,8 +57,9 @@
         font-family: "Inconsolata", monospace;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(255, 255, 255, 0.6), transparent 35%),
-          linear-gradient(165deg, var(--background-top) 0%, var(--background-bottom) 100%);
+          radial-gradient(circle at top left, var(--background-glow), transparent 35%),
+          radial-gradient(circle at bottom right, var(--background-accent), transparent 28%),
+          var(--background);
       }
 
       .card {
@@ -82,9 +84,10 @@
         height: auto;
       }
 
-      .brand-wordmark {
-        width: 136px;
-        max-width: 100%;
+      .brand-title {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        font-weight: 700;
+        line-height: 1;
       }
 
       h1 {
@@ -187,6 +190,29 @@
         font-size: 0.9rem;
       }
 
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #2b1744;
+          --background-glow: rgba(255, 255, 255, 0.08);
+          --background-accent: rgba(164, 214, 247, 0.12);
+          --panel: rgba(27, 16, 45, 0.82);
+          --panel-border: rgba(255, 255, 255, 0.12);
+          --text: #f7f1ff;
+          --muted: rgba(247, 241, 255, 0.78);
+          --input-bg: rgba(63, 37, 96, 0.7);
+          --input-border: rgba(255, 255, 255, 0.18);
+          --button-bg: #f7f1ff;
+          --button-text: #2b1744;
+          --button-disabled: rgba(247, 241, 255, 0.35);
+          --success-bg: rgba(53, 117, 82, 0.35);
+          --success-text: #d5ffe5;
+          --error-bg: rgba(149, 56, 40, 0.42);
+          --error-text: #ffd8d1;
+          --link-bg: rgba(164, 214, 247, 0.18);
+          --link-text: #d4edff;
+        }
+      }
+
       @media (max-width: 640px) {
         body {
           padding: 16px;
@@ -202,17 +228,14 @@
           height: auto;
         }
 
-        .brand-wordmark {
-          width: 120px;
-        }
       }
     </style>
   </head>
   <body>
     <main class="card">
       <div class="brand" aria-hidden="true">
-        <img src="/images/smooth-elephant.png" alt="" class="brand-mark" />
-        <img src="/images/ramble.png" alt="" class="brand-wordmark" />
+        <img src="/images/mascot-256.png" alt="" class="brand-mark" />
+        <span class="brand-title">Ramble</span>
       </div>
 
       <h1>Join the Ramble Beta</h1>
