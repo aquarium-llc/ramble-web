@@ -43,17 +43,8 @@
     <div class="main">
       <header class="home-header">
         <picture>
-          <source
-            srcset="images/doghead-256.png"
-            media="(prefers-color-scheme: dark)"
-            data-header-logo-source
-          />
-          <img
-            src="images/doghead-256.png"
-            alt="Dog logo"
-            class="header-logo"
-            data-header-logo-img
-          />
+          <source srcset="images/doghead-256.png" media="(prefers-color-scheme: dark)" />
+          <img src="images/doghead-256.png" alt="Dog logo" class="header-logo" />
         </picture>
         <div class="header-copy">
           <h1 class="header-title">Ramble</h1>
@@ -94,23 +85,6 @@
 
     <script>
       (() => {
-        const dogLogoVariants = [
-          "images/doghead-256.png",
-          "images/doghead-256-alternate.png"
-        ];
-        const selectedDogLogo =
-          dogLogoVariants[Math.floor(Math.random() * dogLogoVariants.length)];
-        const headerLogoSource = document.querySelector("[data-header-logo-source]");
-        const headerLogoImg = document.querySelector("[data-header-logo-img]");
-
-        if (headerLogoSource) {
-          headerLogoSource.srcset = selectedDogLogo;
-        }
-
-        if (headerLogoImg) {
-          headerLogoImg.src = selectedDogLogo;
-        }
-
         const isAndroid = (() => {
           const uaDataPlatform =
             navigator.userAgentData && typeof navigator.userAgentData.platform === "string"
